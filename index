@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Media Pembelajaran Digital - Jurumiyah</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(to right, #dff9fb, #c7ecee);
+        margin: 0;
+        padding: 0;
+      }
+      header {
+        background: #22a6b3;
+        color: white;
+        padding: 15px;
+        text-align: center;
+      }
+      .container {
+        width: 90%;
+        max-width: 900px;
+        margin: 20px auto;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+      button {
+        padding: 10px 15px;
+        margin: 5px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .menu-btn {
+        background: #22a6b3;
+        color: white;
+      }
+      .menu-btn:hover {
+        background: #0abde3;
+      }
+      .option {
+        display: block;
+        width: 100%;
+        margin: 5px 0;
+        padding: 10px;
+        text-align: left;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+      }
+      .correct {
+        background: #7bed9f !important;
+      }
+      .wrong {
+        background: #ff6b81 !important;
+      }
+      #timer {
+        font-weight: bold;
+        color: #e74c3c;
+        text-align: right;
+      }
+      input.short-answer {
+        width: 100%;
+        padding: 8px;
+        margin: 5px 0 10px 0;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+      }
+      th,
+      td {
+        border: 1px solid #ccc;
+        padding: 8px;
+        text-align: center;
+      }
+      th {
+        background-color: #22a6b3;
+        color: white;
+      }
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <header><h1>Media Pembelajaran Interaktif Kitab Jurumiyah</h1></header>
+
+    <!-- Menu -->
+    <div class="container" id="main-menu">
+      <h2>Menu Utama</h2>
+      <button class="menu-btn" onclick="showMateri()">📘 Materi</button>
+      <button class="menu-btn" onclick="showLatihan()">📝 Latihan</button>
+      <button class="menu-btn" onclick="showTugas()">📊 Tugas</button>
+      <button class="menu-btn" onclick="startEvaluasi()">🧾 Evaluasi</button>
+      <button class="menu-btn" onclick="showSkor()">🏆 Papan Skor</button>
+    </div>
+
+    <!-- Materi -->
+    <div class="container hidden" id="materi">
+      <h2>Materi Kitab Jurumiyah</h2>
+
+      <h3>متن الأجرومية</h3>
+      <p>
+        الكلامُ : هو اللفظُ المُرَكَّبُ المُفيدُ بالوَضْع، وأقسامُه ثلاثة:
+        اِسمٌ، وفعلٌ، وحَرفٌ جاءَ لمَعنى. فالاسم يُعرَفُ بالخَفضِ، والتنوينِ،
+        ودخولِ الألف واللام، وحروفِ الخَفضِ وهي: مِن، واِلى، وعَن، وعلى، وفِي،
+        ورُبَّ، والباءُ، والكافُ، واللامُ، وحروفِ القَسَم وهي: الواو، والباء،
+        والتاء. والفعلُ يُعرَفُ بقد، والسِّين، وسَوف، وتاء التأنيث الساكنة.
+        والحرفُ ما لا يَصلُحُ معه دليلُ الاسم ولا دليل الفعل.
+      </p>
+
+      <h3>PENGERTIAN KALAM / KALIMAT SEMPURNA</h3>
+      <p>
+        Kalam adalah susunan kata yang sempurna menurut standar bahasa Arab.
+        Kalam terbagi menjadi tiga: isim (kata benda), fi'il (kata kerja), dan
+        huruf yang bermakna.
+      </p>
+      <p>
+        Isim dapat diketahui dengan jer, tanwin, dan alif-lam.<br />
+        Fi'il dapat diketahui dengan qad, sin, sawfa, tak ta'nits yang sukun.<br />
+        Huruf adalah kata yang tidak ada tanda isim dan fi'il.
+      </p>
+
+      <h3>PENGERTIAN I'RAB (I'ROB)</h3>
+      <p>
+        I'rab adalah perubahan akhir kata karena perbedaan amil yang masuk
+        padanya baik perubahan secara jelas (lafdzi) atau dikira-kira. I'rab
+        dibagi menjadi 4: rafa', nashab, jer (khafadh), jazm.
+      </p>
+
+      <h3>Jenis I'rob</h3>
+      <p>
+        - I'rob Isim: rafa', nashab, jer (khafadh)<br />
+        - I'rob Fi'il: rafa', nashab, jazm
+      </p>
+
+      <h3>Tanda I'rob Rofa'</h3>
+      <p>
+        I'rob rafa' mempunyai 4 tanda: dhammah, wawu, alif, nun.<br />
+        Harkat dhammah: isim mufrad, jamak taksir, jamak mu'annats salim, fi'il
+        mudharik yang tidak bertemu sesuatu.<br />
+        Huruf wawu: jamak mudzakkar salim, asma'ul khamsah.<br />
+        Huruf alif: isim tasniyah.<br />
+        Huruf nun: fi'il mudharik yang bertemu dhamir tasniyah/jamak/mu'annats
+        mukhatabah.
+      </p>
+
+      <h3>Tanda I'rob Nashab</h3>
+      <p>
+        I'rob nashab mempunyai 5 tanda: fathah, alif, kasrah, ya', menghapus
+        nun.<br />
+        Fathah: isim mufrad, jamak taksir, fi'il mudharik masuk nashab.<br />
+        Alif: asma'ul khamsah.<br />
+        Kasrah: jamak mu'annats salim.<br />
+        Ya': isim tasniyah, jamak mudzakkar salim.<br />
+        Menghapus nun: fi'il khamsah.
+      </p>
+
+      <h3>Tanda I'rob Jar (Khafadh)</h3>
+      <p>
+        Tanda I'rob jer: kasrah, ya', fathah.<br />
+        Kasrah: isim mufrad munsharif, jamak taksir munsharif, jamak mu'annats
+        salim.<br />
+        Ya': asma'ul khamsah, isim tasniyah, jamak mudzakkar salim.<br />
+        Fathah: isim tidak munsharif.
+      </p>
+
+      <h3>Tanda I'rob Jazm</h3>
+      <p>
+        I'rob jazm mempunyai 2 tanda: sukun dan menghapus (hadzf).<br />
+        Sukun: fi'il mudharik sahih akhir.<br />
+        Menghapus huruf: fi'il mudharik mu'tal akhir dan af'alul khamsah yang
+        rafa'-nya memakai nun.
+      </p>
+
+      <button onclick="backMenu()">Kembali</button>
+    </div>
+
+    <!-- Latihan Isian -->
+    <div class="container hidden" id="latihan">
+      <h2>Latihan Isian Singkat</h2>
+      <div id="latihan-soal"></div>
+      <button onclick="backMenu()">Kembali</button>
+    </div>
+
+    <!-- Tugas Tasrifan -->
+    <div class="container hidden" id="tugas">
+      <h2>Tugas Tasrifan</h2>
+      <p>Lengkapi tabel fi’il berikut:</p>
+      <table>
+        <tr>
+          <th>Fi'il</th>
+          <th>Madhi</th>
+          <th>Mudhari'</th>
+          <th>Amr</th>
+        </tr>
+        <tr>
+          <td>كَتَبَ</td>
+          <td>
+            <input
+              class="short-answer"
+              id="madhi1"
+              placeholder="Masukkan jawaban"
+            />
+          </td>
+          <td>
+            <input
+              class="short-answer"
+              id="mudhari1"
+              placeholder="Masukkan jawaban"
+            />
+          </td>
+          <td>
+            <input
+              class="short-answer"
+              id="amr1"
+              placeholder="Masukkan jawaban"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>قَرَأَ</td>
+          <td>
+            <input
+              class="short-answer"
+              id="madhi2"
+              placeholder="Masukkan jawaban"
+            />
+          </td>
+          <td>
+            <input
+              class="short-answer"
+              id="mudhari2"
+              placeholder="Masukkan jawaban"
+            />
+          </td>
+          <td>
+            <input
+              class="short-answer"
+              id="amr2"
+              placeholder="Masukkan jawaban"
+            />
+          </td>
+        </tr>
+      </table>
+      <button onclick="cekTugas()">✅ Cek Jawaban</button>
+      <button onclick="backMenu()">Kembali</button>
+    </div>
+
+    <!-- Evaluasi -->
+    <div class="container hidden" id="evaluasi">
+      <h2>Evaluasi Ujian</h2>
+      <div id="timer"></div>
+      <div id="eval-question"></div>
+      <div id="eval-options"></div>
+      <button onclick="nextEval()">Soal Berikutnya</button>
+    </div>
+
+    <!-- Skor -->
+    <div class="container hidden" id="skor">
+      <h2>Papan Skor</h2>
+      <div id="skor-list"></div>
+      <button onclick="backMenu()">Kembali</button>
+    </div>
+
+    <script>
+      // ===== Data Latihan & Evaluasi =====
+      const latihanSoal = [
+        { soal: "Kata قَرَأَ termasuk …", jawaban: "Fiil" },
+        { soal: "Kalimat قَرَأْتَ termasuk …", jawaban: "Fiil madhi" },
+        { soal: "فِعِلْ dibagi menjadi …", jawaban: "Tiga" },
+        { soal: "كِتَابٌ termasuk …", jawaban: "Isim" },
+        { soal: "عِلٌ  لٌ dalam bahasa Indonesia disebut ", jawaban: "Pelaku" },
+      ];
+
+      const evalSoal = [
+        {
+          soal: "Kata قَرَأَ termasuk …",
+          opsi: { A: "Fi’il", B: "Isim", C: "Maf’ul", D: "Maf’ul bih" },
+          jawaban: "A",
+          penjelasan: "قَرَأَ adalah fi'il.",
+        },
+        {
+          soal: "Kalimat قَرَأْتَ termasuk …",
+          opsi: {
+            A: "فِعِلْ مَاضِ",
+            B: "فِعِلْ مُضَارِعْ",
+            C: "فِعِلِ اَمَرْ",
+            D: "Semua salah",
+          },
+          jawaban: "A",
+          penjelasan: "قَرَأْتَ adalah fi'il madhi.",
+        },
+        {
+          soal: "التُفَّاحَةُ خَلْوَةَ(apel itu manis) terdiri dari ",
+          opsi: {
+            A: "Mubtada' khobar",
+            B: "Maf'ul bih",
+            C: "Fiil maf'ul",
+            D: "Jumlah fi'liyah",
+          },
+          jawaban: "A",
+          penjelasan: "Fi'il terbagi 3: madhi, mudhari', amr.",
+        },
+        {
+          soal: "Kata yang tersusun dari fi’il dan fa’il dinamakan",
+          opsi: {
+            A: "Jumlah kalmat",
+            B: "Jumlah ismiyah",
+            C: "Jumlah mufidah",
+            D: "Jumlah fi'liyah",
+          },
+          jawaban: "D",
+          penjelasan: "Jumlah fi'liyah tersusun dari fi;il dan fa'il",
+        },
+        {
+          soal: "المَدْرَسَةُ جَمِيْلٌ seharusnya",
+          opsi: {
+            A: "المَدْرَسَةُ جَمِيْلَةٌُ",
+            B: "المَدْرَسُ جَمِيْلٌ",
+            C: "المَدْرَسَ جِمِيْلَةِ",
+            D: "جَمِيْلَةُ المَدْرَسَة",
+          },
+          jawaban: "A",
+          penjelasan:
+            "المَدْرَسَةُ جَمِيْلٌ seharusnya المَدْرَسَةُ جَمِيْلَةٌُ",
+        },
+      ];
+
+      let evalIndex = 0,
+        score = 0,
+        timerInterval;
+
+      // ===== Menu Toggle =====
+      function toggle(show) {
+        ["main-menu", "materi", "latihan", "tugas", "evaluasi", "skor"].forEach(
+          (id) => {
+            document.getElementById(id).classList.add("hidden");
+          }
+        );
+        document.getElementById(show).classList.remove("hidden");
+      }
+
+      function showMateri() {
+        toggle("materi");
+      }
+      function showLatihan() {
+        toggle("latihan");
+        renderLatihan();
+      }
+      function showTugas() {
+        toggle("tugas");
+      }
+      function showSkor() {
+        toggle("skor");
+        let data = JSON.parse(localStorage.getItem("score") || "[]");
+        let div = document.getElementById("skor-list");
+        div.innerHTML = "";
+        if (data.length === 0) {
+          div.innerHTML = "<p>Belum ada skor tersimpan.</p>";
+        } else {
+          data.forEach((s, i) => {
+            div.innerHTML += `<p>${i + 1}. ${s.nama} - Skor: ${s.skor}</p>`;
+          });
+        }
+      }
+      function backMenu() {
+        toggle("main-menu");
+      }
+
+      // ===== Latihan Isian =====
+      function renderLatihan() {
+        let div = document.getElementById("latihan-soal");
+        div.innerHTML = "";
+        latihanSoal.forEach((q, i) => {
+          div.innerHTML += `<p><b>${i + 1}. ${q.soal}</b></p>`;
+          div.innerHTML += `<input class="short-answer" id="latihan${i}" placeholder="Jawaban Anda"/><button onclick="cekJawaban(${i})">Cek Jawaban</button><br>`;
+        });
+      }
+      function cekJawaban(i) {
+        let input = document.getElementById("latihan" + i).value.trim();
+        if (input === "") return alert("Jawaban tidak boleh kosong!");
+        if (input.toLowerCase() === latihanSoal[i].jawaban.toLowerCase()) {
+          alert("✅ Benar!");
+        } else {
+          alert("❌ Salah! Jawaban benar: " + latihanSoal[i].jawaban);
+        }
+      }
+
+      // ===== Tugas Tasrifan =====
+      function cekTugas() {
+        const jawaban = {
+          madhi1: "كَتَبَ",
+          mudhari1: "يَكْتُبُ",
+          amr1: "اُكْتُبْ",
+          madhi2: "قَرَأَ",
+          mudhari2: "يَقْرَأُ",
+          amr2: "اُقْرَأْ",
+        };
+        let benar = true;
+        for (let k in jawaban) {
+          if (document.getElementById(k).value.trim() !== jawaban[k]) {
+            benar = false;
+            break;
+          }
+        }
+        if (benar) alert("🎉 Semua jawaban benar!");
+        else alert("⚠️ Ada jawaban yang salah. Cek kembali.");
+      }
+
+      // ===== Evaluasi =====
+      function startEvaluasi() {
+        score = 0;
+        evalIndex = 0;
+        shuffle(evalSoal);
+        toggle("evaluasi");
+        showEval();
+        startTimer(60);
+      }
+      function showEval() {
+        let q = evalSoal[evalIndex];
+        document.getElementById("eval-question").innerHTML =
+          "<b>" + q.soal + "</b>";
+        let div = document.getElementById("eval-options");
+        div.innerHTML = "";
+        for (let k in q.opsi) {
+          let btn = document.createElement("button");
+          btn.className = "option";
+          btn.textContent = k + ". " + q.opsi[k];
+          btn.onclick = () => checkAnswer(q, k, btn);
+          div.appendChild(btn);
+        }
+      }
+      function checkAnswer(q, ans, btn) {
+        document
+          .querySelectorAll("#eval-options .option")
+          .forEach((b) => (b.disabled = true));
+        if (ans === q.jawaban) {
+          btn.classList.add("correct");
+          score += 20;
+        } else {
+          btn.classList.add("wrong");
+          document.querySelectorAll("#eval-options .option").forEach((b) => {
+            if (b.textContent.startsWith(q.jawaban)) b.classList.add("correct");
+          });
+          alert("Jawaban benar: " + q.opsi[q.jawaban] + " | " + q.penjelasan);
+        }
+      }
+      function nextEval() {
+        evalIndex++;
+        if (evalIndex >= evalSoal.length) {
+          clearInterval(timerInterval);
+          let nama =
+            prompt("Masukkan nama Anda untuk menyimpan skor:") || "Anonim";
+          alert("Ujian selesai!\nNama: " + nama + "\nSkor: " + score);
+          let data = JSON.parse(localStorage.getItem("score") || "[]");
+          data.push({ nama: nama, skor: score });
+          localStorage.setItem("score", JSON.stringify(data));
+          backMenu();
+        } else {
+          showEval();
+          startTimer(60);
+        }
+      }
+      function startTimer(sec) {
+        clearInterval(timerInterval);
+        let timer = sec;
+        timerInterval = setInterval(() => {
+          document.getElementById("timer").textContent =
+            "⏰ " + timer + " detik";
+          if (--timer < 0) {
+            clearInterval(timerInterval);
+            alert("Waktu habis!");
+            nextEval();
+          }
+        }, 1000);
+      }
+      function shuffle(arr) {
+        for (let i = arr.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [arr[i], arr[j]] = [arr[j], arr[i]];
+        }
+      }
+    </script>
+  </body>
+</html>
